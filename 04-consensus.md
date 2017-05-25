@@ -119,7 +119,7 @@ X.RMW(v) atomically {
 Decide(value)
   Proposed[threadIndex] = value
   # В ячейке `X` начальное значение 0
-  if X.RMW(1) = 0:
+  if X.RMW(1) = 0
     return Proposed[threadIndex]
   else
     return Proposed[1 - threadIndex]
